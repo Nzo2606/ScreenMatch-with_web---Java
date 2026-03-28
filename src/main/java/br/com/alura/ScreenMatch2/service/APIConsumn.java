@@ -2,13 +2,14 @@ package br.com.alura.ScreenMatch2.service;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class APIConsumn {
 
-    public String obterDados(String address) {
+    public String getData(String address) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(address))
@@ -27,5 +28,6 @@ public class APIConsumn {
         return json;
     }
 }
+
 
 

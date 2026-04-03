@@ -88,9 +88,9 @@ public class Main {
                 case 9:
                     searchEpisodePerExcerpt();
                     break;
-                case 10:
-                    topEpisodesPerSerie();
-                    break;
+//                case 10:
+//                    topEpisodesPerSerie();
+//                    break;
                 case 11:
                     searchEpisodeAfterADate();
                     break;
@@ -356,21 +356,21 @@ public class Main {
     }
 
 
-    private void topEpisodesPerSerie() {
-        searchSeriesByTitle();
-        if (seriesSearch.isPresent()){
-            Series series = seriesSearch.get();
-            List<Episode> topEpisodes = repository.totEpisodesPerSeries(series);
-            System.out.println("\nTop 5 episodes of " + series.getTitle());
-            topEpisodes.forEach(e ->
-                    System.out.printf("Series: %s - Season %s - Episode %s : %s - Rating: %s\n",
-                            e.getSerie().getTitle(),
-                            e.getSeason(),
-                            e.getEpisodeNumber(),
-                            e.getTitle(),
-                            e.getRating()));
-        }
-    }
+//    private void topEpisodesPerSerie() {
+//        searchSeriesByTitle();
+//        if (seriesSearch.isPresent()){
+//            Series series = seriesSearch.get();
+//            List<Episode> topEpisodes = repository.totEpisodesPerSeries(series);
+//            System.out.println("\nTop 5 episodes of " + series.getTitle());
+//            topEpisodes.forEach(e ->
+//                    System.out.printf("Series: %s - Season %s - Episode %s : %s - Rating: %s\n",
+//                            e.getSerie().getTitle(),
+//                            e.getSeason(),
+//                            e.getEpisodeNumber(),
+//                            e.getTitle(),
+//                            e.getRating()));
+//        }
+//    }
 
     private void searchEpisodeAfterADate() {
         searchSeriesByTitle();

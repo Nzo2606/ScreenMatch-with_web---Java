@@ -1,5 +1,6 @@
 package br.com.alura.ScreenMatch2.repository;
 
+import br.com.alura.ScreenMatch2.dto.EpisodeDTO;
 import br.com.alura.ScreenMatch2.model.Category;
 import br.com.alura.ScreenMatch2.model.Episode;
 import br.com.alura.ScreenMatch2.model.Series;
@@ -26,8 +27,8 @@ public interface SerieRepository extends JpaRepository<Series, Long> {
     @Query("SELECT e FROM Series s JOIN s.episodes e WHERE e.title ILIKE %:episodeExcerpt%")
     List<Episode> episodesPerExcerpt(String episodeExcerpt);
 
-    @Query("SELECT e FROM Series s JOIN s.episodes e WHERE s= :series ORDER BY e.rating DESC LIMIT 5" )
-    List<Episode> totEpisodesPerSeries(Series series);
+    @Query("SELECT e FROM Series s JOIN s.episodes e WHERE s.id= :id ORDER BY e.rating DESC LIMIT 5" )
+    List<Episode> totEpisodesPerSeries(Long id);
 
     @Query("SELECT e FROM Series s JOIN s.episodes e WHERE s= :series AND YEAR(e.releaseDate) >= :launchYear")
     List<Episode> episodesPerYear(Series series, int launchYear);
@@ -39,4 +40,7 @@ public interface SerieRepository extends JpaRepository<Series, Long> {
     ORDER BY MAX(e.releaseDate) DESC
 """)
     List<Series> searchReleases();
+
+    @Query("SELECT e FROM Series s JOIN s.episodes e WHERE s.id = :id AND e.season = :number")
+    List<Episode> getEpisodesBySeasons(Long id, Long number);
 }

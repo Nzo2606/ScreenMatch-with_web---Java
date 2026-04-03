@@ -2,12 +2,11 @@ package br.com.alura.ScreenMatch2.main;
 
 import br.com.alura.ScreenMatch2.model.*;
 import br.com.alura.ScreenMatch2.repository.SerieRepository;
-import br.com.alura.ScreenMatch2.service.APIConsumn;
-import br.com.alura.ScreenMatch2.service.DataConversor;
+import br.com.alura.ScreenMatch2.service.API.APIConsumn;
+import br.com.alura.ScreenMatch2.service.conversor.DataConversor;
 import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
 

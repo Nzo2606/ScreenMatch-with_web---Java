@@ -1,9 +1,8 @@
-package br.com.alura.ScreenMatch2.service;
+package br.com.alura.ScreenMatch2.service.conversor;
 
-import br.com.alura.ScreenMatch2.model.SeriesData;
 import tools.jackson.databind.ObjectMapper;
 
-public class DataConversor implements iDataConversor{
+public class DataConversor implements iDataConversor {
 
     ObjectMapper mapper = new ObjectMapper();
 

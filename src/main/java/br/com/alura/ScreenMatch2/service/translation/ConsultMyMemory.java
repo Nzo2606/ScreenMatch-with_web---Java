@@ -1,6 +1,6 @@
 package br.com.alura.ScreenMatch2.service.translation;
 
-import br.com.alura.ScreenMatch2.service.APIConsumn;
+import br.com.alura.ScreenMatch2.service.API.APIConsumn;
 import tools.jackson.databind.ObjectMapper;
 
 import java.net.URLEncoder;
